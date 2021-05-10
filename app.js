@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
 const https = require("https");
+const dotenv = require('dotenv').config();
 
 const app = express();
 
@@ -37,7 +38,7 @@ app.post("/", function(req, res) {
 
   const options = {
     method: "POST",
-    auth: "amrit1:38cadd65b05a328fc3e29700e793857f-us1"
+    auth: "amrit1:" + "process.env.SECRET_KEY"
 
   };
 
